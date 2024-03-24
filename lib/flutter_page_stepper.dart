@@ -10,6 +10,8 @@ class FlutterPageStepper extends StatelessWidget {
   final Color? inactiveColor;
   final TextStyle? textStyle;
   final double? headingVerticalPadding;
+  final double? dividerWidth;
+  final double? indexContainerSize;
 
   const FlutterPageStepper(
       {super.key,
@@ -19,7 +21,9 @@ class FlutterPageStepper extends StatelessWidget {
       required this.activeColor,
       this.inactiveColor,
       this.textStyle,
-      this.headingVerticalPadding = 0});
+      this.headingVerticalPadding = 0,
+      this.dividerWidth = 50,
+      this.indexContainerSize = 35});
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +40,8 @@ class FlutterPageStepper extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          height: 35,
-                          width: 35,
+                          height: indexContainerSize,
+                          width: indexContainerSize,
                           decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: currentIndex <= index - 1
@@ -51,7 +55,7 @@ class FlutterPageStepper extends StatelessWidget {
                             ? const SizedBox()
                             : Container(
                                 height: 0.4,
-                                width: 50,
+                                width: dividerWidth,
                                 color: Colors.black,
                               )
                       ],
