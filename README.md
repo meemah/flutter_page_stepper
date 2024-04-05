@@ -1,39 +1,46 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A Simple and easily customizable widget for creating a page stepper with indicators to navigate through pages.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Customizable: Customize the appearance of the stepper and indicators.
 
-## Getting started
+Flexible: Supports any number of steps/pages.
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+![Demo](demo.gif)
 
 ## Usage
-
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
+Install dependency and Import the package using(Check Installing tab for more info)
 ```dart
-const like = 'sample';
+import 'package:flutter_page_stepper/flutter_page_stepper.dart';
 ```
+Add the FlutterPageStepper into your code by setting the active color, stepperLength(number of pages), currentIndex, and a List of pages you will like to display
+```dart
+FlutterPageStepper(
+        activeColor: Colors.brown,
+        stepperLength: 3,
+        currentIndex: currentPage,
+        children: const [
+          Text("Hey, I am the first page"),
+          Text("Hello, Welcome to the second page"),
+          Text("Oopps, last page. Journey ends here")
+        ],
+)
+```
+See [pub.dev example tab](https://pub.dev/packages/flutter_page_stepper/example) or [github code](example/lib/main.dart) for more details
 
-## Additional information
+## Parameters
+These attributes are used to customize the behavior and appearance of the stepper widget.
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+| Attribute              | Type                   | Required | Description                                                                                                                                   |
+|------------------------|------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| `stepperLength`        | `int`                  | `Yes`    | The number of steps in the stepper.                                                                                                          |
+| `currentIndex`         | `int`                  | `Yes`    | The current index of the stepper.                                                                                                            |
+| `children`             | `List<Widget>`         | `Yes`    | The pages/widgets associated with each step.                                                                                                  |
+| `activeColor`          | `Color`                | `Yes`    | The background color of the stepper when active.                                                                                              |
+| `inactiveColor`        | `Color?`               | `No`     | The background color of the stepper when inactive. Defaults to `activeColor` with opacity set to 0.5.                                       |
+| `textStyle`            | `TextStyle?`           | `No`     | The text style of the number in the indicator.                                                                                                |
+| `headingVerticalPadding`| `double?`             | `No`     | Vertical padding on the stepper header.                                                                                                      |
+| `dividerWidth`         | `double?`              | `No`     | Width of the divider between each indicator.                                                                                                 |
+| `indicatorSize`        | `double?`              | `No`     | Size of the indicator.                                                                                                                       |
