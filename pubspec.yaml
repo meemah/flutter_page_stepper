@@ -1,7 +1,7 @@
 name: flutter_page_stepper
-description: "A new Flutter package project."
+description: "A Simple and easily customizable widget for creating a page stepper with indicators to navigate through pages."
 version: 0.0.1
-homepage:
+homepage: https://github.com/meemah/flutter_page_stepper
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
